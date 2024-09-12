@@ -29,6 +29,7 @@
 
 - Atribuição de valor: =
 - Concatenação: +
+- Comparação: ==, != >, <, >=, <=
 
 ## Estrutura de dados
 
@@ -54,6 +55,7 @@
 ## Condicionais
 
 - Switch
+- If/Else
 
 ## Módulos em Node.js
 

@@ -1,4 +1,19 @@
-const { select } = require("@inquirer/prompts")
+const { select, input } = require("@inquirer/prompts")
+
+let metas = []
+
+const cadastrarMeta = async() => {
+    const meta = await input({ message: "Digite a meta: "})
+
+    if(meta.length == 0){
+        console.log("A meta não pode ser vazia!")
+        return
+    }
+
+    metas.push(
+        {value: meta, checked: false}
+    )
+}
 
 const start = async() => {
 
@@ -24,7 +39,7 @@ const start = async() => {
 
         switch(opc){
             case "cadastrar":
-                console.log("Vamos cadastrar");
+                await cadastrarMeta();
                 break
             case "listar":
                 console.log("Vamos listar");
