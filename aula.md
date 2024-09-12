@@ -30,12 +30,14 @@
 - Atribuição de valor: =
 - Concatenação: +
 - Comparação: ==, != >, <, >=, <=
+- Spread: ...
 
 ## Estrutura de dados
 
 ### Arrays
 
 - Lista que contém algum tipo de dado
+- Métodos de array: push, [find, forEach, filter] : HOF (Higher Order Functions)
 
 ### Objetos
 
