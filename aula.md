@@ -50,3 +50,7 @@
 ## Estrutura de repetição
 
 - While
+
+## Condicionais
+
+- Switch
