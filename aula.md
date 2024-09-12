@@ -46,3 +46,7 @@
 
 - Criar, executar uma function
 - Arrow function, named function
+
+## Estrutura de repetição
+
+- While

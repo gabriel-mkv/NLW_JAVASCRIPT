@@ -1,13 +1,11 @@
-// arrays, objetos
-let meta = {
-    value: "Andar de skate",
-    checked: false,
-    isChecked: () => {}
+const start = () => {
+
+    let count = 0;
+
+    while(count <= 10){
+        console.log(count)
+        count++
+    }
 }
 
-console.log(meta.value)
-
-// function // arrow function
-const criarMeta = () => {}
-
-function criarMeta(){}
+start();
