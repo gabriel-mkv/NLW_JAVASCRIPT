@@ -23,8 +23,26 @@
 
 - Strings (textos): "", '', ``
 - Number: 2, 1.4
-- Function
+- Boolean: true, false
 
 ## Operadores
 
 - Atribuição de valor: =
+- Concatenação: +
+
+## Estrutura de dados
+
+### Arrays
+
+- Lista que contém algum tipo de dado
+
+### Objetos
+
+- Atributos e métodos
+- Criação e manipulação de objetos
+- Acesso a prorpiedade de objetos
+
+### Function
+
+- Criar, executar uma function
+- Arrow function, named function
