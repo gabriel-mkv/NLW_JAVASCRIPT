@@ -1,10 +1,28 @@
-/* Importa a biblioteca require */
+/* Importa a biblioteca require e o módulo Node FS */
 const { select, input, checkbox } = require("@inquirer/prompts")
+const fs = require("fs").promises
 
+/* Declara a variavel mensagem que irá conter os textos apresentados ao usuário */
 let mensagem = "Bem vindo ao GoalsCheck!"
 
 /* Declara o array que irá armazena as metas */
-let metas = []
+let metas
+
+/* Cria a função para buscar no JSON as metas salvas */
+const carregarMetas = async() => {
+    try{
+        const dados = await fs.readFile("metas.json", "utf-8")
+        metas = JSON.parse(dados)
+    }
+    catch(erro) { 
+        metas = [] 
+    }
+}
+
+/* Cria a função que salva no arquivo JSON as adições ou remoções de metas */
+const salvarMetas = async() => {
+    await fs.writeFile("metas.json", JSON.stringify(metas, null, 2))
+}
 
 /* Cria função para cadastrar a meta no sistema */
 const cadastrarMeta = async() => {
@@ -26,6 +44,11 @@ const cadastrarMeta = async() => {
 
 /* Cria a função de listar as metas para serem marcadas ou desmarcadas */
 const listarMeta = async() => {
+
+    if (metas.length == 0) {
+        mensagem = "Não existem metas!"
+        return
+    }
 
     const respostas = await checkbox
     (
@@ -97,6 +120,12 @@ const metasAbertas = async() => {
 
 /* Cria função para remover as metas que foram selecionadas */
 const removerMetas = async() => {
+    
+    if (metas.length == 0) {
+        mensagem = "Não existem metas!"
+        return
+    }
+
     const metasDesmarcadas = metas.map((meta) => {
         return { value: meta.value, checked: false }
     })
@@ -122,6 +151,7 @@ const removerMetas = async() => {
 
 }
 
+/* Cria a função para limpar a tela toda vez que uma ação for feita pelo usuário */
 const mostrarMensagem = () => {
     console.clear();
 
@@ -136,9 +166,12 @@ const mostrarMensagem = () => {
 /* Cria função que vai iniciar o programa e imprimir o menu */
 const start = async() => {
 
+    await carregarMetas();
+
     while(true){
 
-         mostrarMensagem();
+        mostrarMensagem();
+        await salvarMetas();
 
         const opc = await select({
             message: "Menu  >\n",
