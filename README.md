@@ -19,7 +19,7 @@ de um arquivo JSON.
 
 O projeto me proporcionou um ótimo crescimento na tecnologia do javascript, visto que nunca havia tido muito contato com
 a mesma. Através dessa aplicação foi possível perceber o potencial que o javascript tem, e realizar uma aplicação 
-inteiramente nele me ajudou a consolidar uma base maior na sua linguagem.
+inteiramente nele me ajudou a consolidar uma base maior na sua linguagem, conhecendo também sobre criação de prompts utilizando a biblioteca Inquirer.
 
 Além do javascript, também pude conhecer o node.js, uma ferramenta que fornece a capacidade de executar o código
 javascript fora de um navegador, o arquivo JSON como forma de armazenar os dados de forma persistente (no caso as metas)
